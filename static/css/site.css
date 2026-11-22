@@ -1,0 +1,12 @@
+:root {
+  color-scheme: dark;
+}
+
+body {
+  font-family: "Pretendard", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background-image: radial-gradient(circle at 20% 0%, rgba(16, 185, 129, 0.12), transparent 45%);
+}
+
+a {
+  text-decoration-thickness: 1px;
+}

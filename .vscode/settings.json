@@ -1,0 +1,9 @@
+{
+  "python.defaultInterpreterPath": "C:\\python\\python.exe",
+  "python.terminal.activateEnvironment": false,
+  "files.encoding": "utf8",
+  "terminal.integrated.env.windows": {
+    "PYTHONUTF8": "1",
+    "PYTHONIOENCODING": "utf-8"
+  }
+}

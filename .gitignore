@@ -1,0 +1,26 @@
+# Python / Django
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.log
+db.sqlite3
+db.sqlite3-shm
+db.sqlite3-wal
+
+# Local secrets
+.env
+
+# Generated / user content
+media/
+staticfiles/
+
+# Local tooling
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+*.code-workspace
+
+# Scratch files from setup
+_setup*.log
+setup*.ps1
