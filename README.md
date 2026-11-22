@@ -44,6 +44,7 @@ C:\python\python.exe manage.py createsuperuser
 | `DJANGO_SECRET_KEY` | `.env` 값 | 직접 설정 권장 |
 | `DJANGO_ALLOWED_HOSTS` | `127.0.0.1,localhost,testserver` | `*` 또는 실제 호스트 |
 | `DATABASE_URL` | 비움 (SQLite) | 플랫폼이 자동 주입 |
+| `POSTGRES_*` | 비움 | `DATABASE_URL`이 없을 때 대체 연결 정보로 사용 |
 | `UPPCODER_SELF_URL` | 비움 | 플랫폼이 자동 주입 (CSRF/호스트 자동 반영) |
 
 `.env`는 커밋하지 않습니다. 서버에서는 stack 페이지의 환경변수/Connection details를 사용하세요.

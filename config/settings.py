@@ -75,10 +75,21 @@ TEMPLATES = [
 WSGI_APPLICATION = "config.wsgi.application"
 
 # Local development has no PostgreSQL, so it falls back to SQLite.
-# On Uppcoder, DATABASE_URL is injected by the platform.
+# On Uppcoder, DATABASE_URL (or the POSTGRES_* parts) is injected by the platform.
 DATABASE_URL = env("DATABASE_URL", default="")
 if DATABASE_URL:
     DATABASES = {"default": env.db("DATABASE_URL")}
+elif env("POSTGRES_HOST", default=""):
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": env("POSTGRES_DB", default=""),
+            "USER": env("POSTGRES_USER", default=""),
+            "PASSWORD": env("POSTGRES_PASSWORD", default=""),
+            "HOST": env("POSTGRES_HOST", default=""),
+            "PORT": env("POSTGRES_PORT", default="5432"),
+        }
+    }
 else:
     DATABASES = {
         "default": {
