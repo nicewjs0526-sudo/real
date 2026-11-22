@@ -21,3 +21,11 @@ else:
             {"document_root": settings.MEDIA_ROOT},
         )
     ]
+    if not getattr(settings, "HAS_WHITENOISE", False):
+        urlpatterns += [
+            re_path(
+                r"^static/(?P<path>.*)$",
+                serve,
+                {"document_root": settings.STATIC_ROOT},
+            )
+        ]

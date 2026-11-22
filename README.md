@@ -75,4 +75,5 @@ pixi run -e web-django python manage.py createsuperuser
 - HTTPS는 프록시가 종료합니다. `SECURE_PROXY_SSL_HEADER`가 없으면 admin 로그인이 403이 됩니다(설정 완료).
 - 무료 Spark는 앱 1개 + DB 1개, 2GB 메모리/디스크입니다. 미디어가 큰 사이트는 외부 스토리지가 필요합니다.
 - 커스텀 도메인과 운영(Production) 환경 분리는 유료 플랜 기능입니다.
-- 이 PC의 Python이 32비트이면 `psycopg[binary]` 로컬 설치가 실패할 수 있습니다. 로컬은 SQLite로 동작하므로 문제 없고, 서버(Linux)에서는 정상 설치됩니다.
+- 이 PC의 Python이 32비트이면 `psycopg[binary]` 로컬 설치가 실패할 수 있습니다. `requirements.txt`는 Linux에서만 psycopg를 설치하도록 표시해 두었으므로, 로컬은 SQLite로 그대로 동작하고 서버에서는 psycopg가 사용됩니다.
+- `django-environ`·`whitenoise`는 필수가 아닙니다. 없으면 표준 라이브러리 설정 로더와 Django 자체 정적 파일 서빙으로 동작합니다.
